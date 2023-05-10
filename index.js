@@ -19,15 +19,15 @@ app.get("/VolCalc", function(req, res) {
 app.post("/", function(req, res){
 
 //use n1 for radium and n2 for height
-  var num1 = Number(req.body.n1);
-  var num2 = Number(req.body.n2);
+  var rad = Number(req.body.Radius);
+  var height= Number(req.body.Height);
 
 // does the computation of the input variables, as numbers
 //This is a new comment that is gor GitHub
-  var volCylinder = Math.PI * Math.pow(num1, 2) * num2;
+  var volCone = 1/3 * Math.PI * (Math.pow(rad, 2) * height);
 
 // sends the results back to the web page as string
-  res.send("The volume of the cylinder is " + volCylinder.toFixed(2));
+  res.send("The volume of a right circular cone is " + volCone.toFixed(2));
 })
 //this gets the response from the web page to this placeholder
 
